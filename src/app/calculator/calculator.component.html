@@ -1,0 +1,10 @@
+<div class="main-container">
+    <h1>Simple Calculator</h1>
+    <input type="text" [(ngModel)]="display" [disabled]="true">
+    <br>
+
+    <!-- Loop through arrays to generate buttons for digits and operators -->
+    <div *ngFor="let row of buttonRows" class="button-row">
+     <button *ngFor="let button of row" (click)="onButtonClick(button)">{{ button }}</button>
+    </div>
+</div>
