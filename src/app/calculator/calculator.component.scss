@@ -1,5 +1,16 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+:root {
+  --background-dark: #333;
+  --background-light: #fff;
+  --border-dark: #666;
+  --border-light: #ccc;
+  --text-dark: #fff;
+  --text-light: #000;
+  --button-dark: #666;
+  --button-light: #fff;
+}
+
 /* Center the calculator on the page */
 .calculator-container {
   display: flex;
@@ -92,23 +103,6 @@
   }
 }
 
-/* Dark Mode Styles */
-.dark-mode {
-  background-color: #333; /* Dark background color */
-  color: #fff; /* Light text color */
-}
-
-.dark-mode .calculator {
-  background-color: #444; /* Dark background color for calculator */
-  border: 1px solid #666; /* Dark border color */
-}
-
-.dark-mode .button {
-  background-color: #666; /* Dark button background color */
-  border: 1px solid #444; /* Dark button border color */
-  //   color: white;
-}
-
 .toggle-container {
   position: relative;
   mat-slide-toggle {
@@ -117,4 +111,22 @@
     top: -0.5rem;
     margin: 2px 0;
   }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+}
+
+//For calculator
+.dark-mode .calculator {
+  background-color: var(--background-light);
+  border: 1px solid var(--border-light);
+}
+
+.dark-mode .button {
+  //For buttons
+  background-color: var(--button-dark);
+  border: 1px solid var(--border-dark);
 }
