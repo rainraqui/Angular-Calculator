@@ -1,50 +1,40 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+$background-light: #f0f0f0;
+$border-color: #ccc;
+$button-background: #666;
+$button-border: #444;
+$text-light: #fff;
+$text-dark: #000;
 
-:root {
-  --background-dark: #333;
-  --background-light: #fff;
-  --border-dark: #666;
-  --border-light: #ccc;
-  --text-dark: #fff;
-  --text-light: #000;
-  --button-dark: #666;
-  --button-light: #fff;
-}
-
-/* Center the calculator on the page */
 .calculator-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  height: 100vh; /* 100% of viewport height */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .input-container {
-  justify-content: center;
   input {
-    font-size: 1.5rem; /* Increase font size */
-    padding: 10px; /* Increase padding for spacing */
-    width: 90%; /* Make the input 100% wide */
+    font-size: 1.5rem;
+    padding: 10px;
+    width: 90%;
     text-align: right;
   }
 }
 
-/* Calculator container */
 .calculator {
-  max-width: 300px; /* Limit the calculator width for smaller screens */
-  width: 100%; /* Full width on small screens */
+  max-width: 300px;
+  width: 100%;
   padding: 20px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  background-color: $background-light;
+  border: 1px solid $border-color;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Display area */
 .display {
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: $background-light;
+  border: 1px solid $border-color;
   border-radius: 5px;
   padding: 10px;
   font-size: 1.5rem;
@@ -52,20 +42,18 @@
   margin-bottom: 10px;
 }
 
-/* Button row */
 .button-row {
   display: flex;
-  flex-wrap: wrap; /* Wrap buttons to the next line on small screens */
-  justify-content: space-between; /* Spread buttons evenly */
-  margin: 5px 0; /* Add vertical spacing between rows */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5px 0;
 }
 
-/* Calculator buttons */
 .button {
   flex: 1;
-  padding: 10px;
+  padding: 0.625rem;
   margin: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid $border-color;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
@@ -77,7 +65,7 @@
 
   &.operator {
     background-color: #ff9800;
-    color: #fff;
+    color: $text-light;
   }
 
   &.operator:hover {
@@ -86,7 +74,7 @@
 
   &.equals {
     background-color: #2196f3;
-    color: #fff;
+    color: $text-light;
   }
 
   &.equals:hover {
@@ -95,7 +83,7 @@
 
   &.clear {
     background-color: #f44336;
-    color: #fff;
+    color: $text-light;
   }
 
   &.clear:hover {
@@ -103,30 +91,29 @@
   }
 }
 
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #333;
+  color: $text-light;
+  .calculator {
+    background-color: #444;
+    border: 1px solid #666;
+  }
+
+  .button {
+    background-color: #666;
+    border: 1px solid #444;
+  }
+}
+
+/* Toggle container styles */
 .toggle-container {
   position: relative;
+
   mat-slide-toggle {
     position: absolute;
     right: -0.5rem;
     top: -0.5rem;
     margin: 2px 0;
   }
-}
-
-/* Dark Mode Styles */
-.dark-mode {
-  background-color: var(--background-dark);
-  color: var(--text-light);
-}
-
-//For calculator
-.dark-mode .calculator {
-  background-color: var(--background-light);
-  border: 1px solid var(--border-light);
-}
-
-.dark-mode .button {
-  //For buttons
-  background-color: var(--button-dark);
-  border: 1px solid var(--border-dark);
 }

@@ -2,5 +2,6 @@
   "editor.autoIndent": "advanced",
   "prettier.useTabs": true,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "liveServer.settings.port": 5501
 }
