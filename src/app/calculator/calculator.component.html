@@ -1,10 +1,32 @@
-<div class="main-container">
+<div class="calculator-container">
+  <div [ngClass]="{ calculator: true, 'dark-mode': isDarkMode }">
+    <!-- Dark Mode Toggle -->
+    <div class="toggle-container">
+      <mat-slide-toggle (click)="toggleDarkMode()">
+        Dark Mode
+      </mat-slide-toggle>
+    </div>
     <h1>Simple Calculator</h1>
-    <input type="text" [(ngModel)]="display" [disabled]="true">
-    <br>
+    <div class="input-container">
+      <input type="text" [(ngModel)]="display" [disabled]="true" />
+    </div>
+
+    <br />
 
     <!-- Loop through arrays to generate buttons for digits and operators -->
     <div *ngFor="let row of buttonRows" class="button-row">
-     <button *ngFor="let button of row" (click)="onButtonClick(button)">{{ button }}</button>
+      <button
+        *ngFor="let button of row"
+        (click)="onButtonClick(button)"
+        [ngClass]="{
+          button: true,
+          operator: isOperator(button),
+          equals: isEquals(button),
+          clear: isClear(button)
+        }"
+      >
+        {{ button }}
+      </button>
     </div>
+  </div>
 </div>
