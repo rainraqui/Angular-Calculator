@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CalculatorComponent {
   display: string = '';
-  isDarkMode: boolean = false; // Default to light mode
-
+  isDarkMode: boolean = false; //Default is light mode
   // Define button rows as an array of arrays
   buttonRows: string[][] = [
     ['7', '8', '9', '+'],
@@ -40,17 +39,14 @@ export class CalculatorComponent {
   }
 
   isOperator(button: string): boolean {
-    // Define logic to identify operator buttons
     return ['+', '-', '*', '/'].includes(button);
   }
 
   isEquals(button: string): boolean {
-    // Define logic to identify the equals button
     return button === '=';
   }
 
   isClear(button: string): boolean {
-    // Define logic to identify the clear button
     return button === 'C';
   }
 
